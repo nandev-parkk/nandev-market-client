@@ -1,10 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
 import MainPageComponent from './main/index';
+import UploadPage from './upload/index';
+import ProductPage from './product/index';
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-      <MainPageComponent />
+    <div>
+      <Switch>
+        <Route exact={true} path="/">
+          <MainPageComponent />
+        </Route>
+        <Route exact={true} path="/products/:id">
+          <ProductPage />
+        </Route>
+        <Route exact={true} path="/upload">
+          <UploadPage />
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
